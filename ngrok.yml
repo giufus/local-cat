@@ -1,0 +1,23 @@
+authtoken: REPLACE_WITH_NGROK_ACCESS_TOKEN
+version: 2
+log_level: info
+log_format: json
+dns_resolver_ips:
+  - 1.1.1.1
+  - 8.8.8.8
+tunnels:
+  chesire:
+    schemes:
+      - https
+    proto: http
+    domain: REPLACE_WITH_NGROK_CUSTOM_DOMAIN
+    addr: host.docker.internal:1865
+
+    # -------------------------
+    # Additional options
+    # -------------------------
+    basic_auth: 
+      - "REPLACE_WITH_BASICAUTH_USER:REPLACE_WITH_BASICAUTH_USER"
+    #host_header: rewrite
+    # inspect: true
+    # bind_tls: true
